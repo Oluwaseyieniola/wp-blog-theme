@@ -1,0 +1,322 @@
+:root {
+    --blue: #b6cce1; /* Darker shade of blue */
+    --indigo: #4b0082; /* Indigo with a darker tone */
+    --purple: #120612; /* Dark purple */
+    --pink: #ff1493; /* Deep pink */
+    --red: #ff4500; /* Orange red */
+    --orange: #ff8c00; /* Dark orange */
+    --yellow: #ffd700; /* Gold */
+    --green: #006400; /* Dark green */
+    --teal: #008080; /* Teal */
+    --cyan: #00ced1; /* Dark cyan */
+    --white: #f5f5f5; /* Off white */
+    --gray: #2e2e2e; /* Dark gray */
+    --gray-dark: #1c1c1c; /* Very dark gray */
+    --primary: #0c0513; /* Darker shade of primary color */
+    --secondary: #444; /* Medium dark gray */
+    --success: #228b22; /* Forest green */
+    --info: #4682b4; /* Steel blue */
+    --warning: #ffcc00; /* Dark gold */
+    --danger: #ff6347; /* Tomato red */
+    --light: #333; /* Darker shade for light */
+    --lightgray: #555; /* Medium dark gray */
+    --dark: #000; /* Pure black */
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    /* Font Sizes */
+    --font-normal: 1em;
+    --font-small: 0.8125rem;
+    /* Sidebar */
+    --sidebar-width: 280px;
+    --content-max-width: 860px;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    line-height: 1.15;
+    background-color: var(--gray-dark); /* Dark background for the whole page */
+}
+body {
+    color: var(--white); /* Text color changed to light for dark background */
+    overflow-x: hidden;
+    background-color: var(--gray-dark); /* Ensuring body background matches theme */
+}
+a {
+    color: var(--cyan); /* Accentuated link color for visibility */
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--white); /* Light text color for headings */
+    font-weight: bold;
+}
+
+.btn {
+    font-weight: bold;
+    padding: .375rem 1rem;
+    height: 2.75rem;
+    transition: all 0.4s ease-in-out;
+    color: var(--white); /* Ensuring button text is light */
+    background-color: var(--secondary); /* Dark background for buttons */
+}
+
+.btn:focus,
+.btn.focus {
+    box-shadow: none !important;
+}
+
+.btn-primary {
+    background-color: var(--primary); /* Darker primary color for buttons */
+    border-color: transparent;
+}
+
+.form-control {
+    padding-top: 0.875rem;
+    padding-bottom: 0.875rem;
+    height: 2.75rem;
+    border-color: var(--light);
+    background-color: var(--gray-dark); /* Dark background for form controls */
+    color: var(--white); /* Light text for form inputs */
+}
+
+.theme-bg-light {
+    background: var(--gray-dark) !important; /* Dark background for elements supposed to be 'light' */
+}
+
+.theme-bg-dark {
+    background: var(--black) !important; /* Very dark background */
+}
+
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: var(--sidebar-width);
+    background: var(--primary); /* Darker primary color for header */
+    color: var(--white);
+}
+.header .site-title {
+    color: var(--white);
+    font-size: 1.2em;
+    display: block;
+}
+
+.header .btn-primary {
+    background: rgba(255, 255, 255, 0.1); /* Slightly transparent white for buttons */
+    border-color: transparent;
+    font-size: 1rem;
+    padding-top: 0.5rem;
+}
+
+.header .btn-primary:hover {
+    background: rgba(255, 255, 255, 0.2); /* Slightly more transparent on hover */
+    border-color: transparent;
+}
+
+.header .navbar {
+    padding: 2rem 1rem;
+}
+
+.header .navbar-dark .navbar-toggler {
+    border: none;
+    padding: .25rem .6rem;
+}
+
+.header .navbar-dark .navbar-toggler:hover {
+    -webkit-opacity: 1;
+    -moz-opacity: 1;
+    opacity: 1;
+}
+
+.header .navbar-dark .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='3' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
+.header .nav-item {
+    font-weight: bold;
+}
+
+.header .nav-item.active .nav-link {
+    color: rgba(255, 255, 255, 0.7); /* Slightly lighter color for active nav item */
+}
+
+.header .nav-item.active .nav-link:hover {
+    text-decoration: none;
+}
+
+.header .nav-item .nav-link {
+    color: rgba(255, 255, 255, 0.9); /* Almost white for nav links */
+}
+
+.header .nav-item .nav-link:hover {
+    text-decoration: underline;
+    color: rgba(255, 255, 255, 0.8); /* Slightly lighter on hover */
+}
+.logo {
+    width: 78px;
+}
+.social-list a {
+    width: 32px;
+    height: 32px;
+    padding-top: 5px;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    transition: all 0.2s ease-in-out;
+    background-color: #333; /* Dark background for social icons */
+    color: var(--white); /* Light text for social icons */
+}
+
+.social-list a:hover {
+    color: var(--white); /* Keep the icon color light on hover */
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent hover effect */
+}
+
+.main-wrapper {
+    margin-left: var(--sidebar-width);
+    background: var(--gray-dark); /* Dark background for the main content area */
+    color: var(--white); /* Ensuring main content text is light */
+}
+
+.main-wrapper .container {
+    max-width: var(--content-max-width);
+}
+.page-title {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    transition: all .2s;
+    background-color: var(--gray-dark); /* Matching background for sticky elements */
+}
+.sticky {
+    padding: 1em 0 !important;
+}
+.page-title .heading {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--white);
+}
+
+.footer {
+    color: rgba(255, 255, 255, 0.7); /* Lighter color for footer text */
+    background-color: var(--gray-dark); /* Dark footer background */
+}
+
+.footer a {
+    color: var(--white); /* Light color for footer links */
+}
+.gradient {
+    background: rgb(43, 43, 43);
+    background: linear-gradient(151deg, var(--orange) 0%, var(--pink) 35%, var(--primary) 100%) !important;
+}
+.content .post .title {
+    font-size: 1.275rem;
+}
+
+.content .post .title a {
+    color: var(--white); /* Light color for post titles */
+}
+
+.content .post .title a:hover {
+    color: var(--cyan); /* Cyan hover effect for links */
+}
+
+.content .post .post-thumb {
+    max-width: 160px;
+    border-radius: 2px;
+}
+
+.content .post .intro {
+    font-size: 0.875rem;
+}
+
+.content .post .more-link {
+    font-size: var(--font-small);
+}
+
+.meta {
+    color: #aaa; /* Lighter gray for meta text */
+    font-size: var(--font-small);
+}
+
+.meta span {
+    display: inline-block;
+    margin-right: .25em;
+}
+
+.meta span a {
+    color: #aaa; /* Matching lighter gray for meta links */
+}
+.meta span.tag {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.1); /* Darker background for tags */
+    color: var(--white); /* Light text color for tags */
+    padding: 0.15rem 0.45rem;
+    border-radius: 0.25rem;
+    font-size: var(--font-small);
+    text-transform: uppercase;
+    margin-bottom: .5rem;
+}
+
+.post-content {
+    font-size: var(--font-normal);
+    line-height: 1.5;
+    color: var(--white); /* Ensuring readability for post content */
+}
+
+.post-content p {
+    color: var(--white); /* Light color for paragraphs */
+}
+
+.post-content .block {
+    margin-bottom: 1.5em;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+    font-weight: bold;
+    color: var(--white); /* Light color for headings */
+}
+
+.post-content .highlight {
+    background: rgba(255, 255, 255, 0.1); /* Subtle highlight for important text */
+}
+
+.post-content pre {
+    color: var(--white); /* Light color for preformatted text */
+}
+
+.post-content blockquote {
+    color: #ddd; /* Light gray for blockquotes */
+    border-left: 0.5rem solid var(--primary); /* Primary color border */
+    padding-left: 0.75rem;
+}
+
+blockquote {
+    color: #ddd;
+    border-left: 0.25rem solid var(--primary);
+    padding-left: 0.75rem;
+}
+.post-content .callout {
+    border-left: 4px solid var(--primary); /* Primary color border */
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
